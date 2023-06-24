@@ -1,0 +1,50 @@
+.DropdownMenus {
+  position: relative;
+  &-select {
+    border: none;
+    background-color: transparent;
+    color: #717da3;
+    cursor: pointer;
+    & svg {
+      width: 1rem;
+      display: inline;
+      vertical-align: middle;
+    }
+  }
+  &-options {
+    position: absolute;
+    top: 2rem;
+    background-color: #fff;
+    width: max-content;
+    border-radius: .4rem;
+    padding: .4rem 0;
+// so that the dropdown menus can smoothly falls from top and close back as well
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+    &-journey{
+      padding: .8rem .8rem .8rem 2.5rem;
+      position: relative;
+      // while it's opening or closing the letters don't shrink, it appears and disappear in smooth way
+      opacity: 0;
+      transition: opacity 150ms ease-in-out;
+      &:hover {
+        background-color: #eee;
+        cursor: pointer;
+      }
+    }
+    & svg {
+      width: 1.2rem;
+      display: inline;
+      position: absolute;
+      left: .8rem;
+    }
+    &.show {
+      transform: scale(1,1);
+    }
+    &.show .DropdownMenus-options-journey {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out 250ms;
+    }
+  }
+}
