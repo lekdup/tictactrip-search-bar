@@ -1,10 +1,13 @@
 .DropdownMenus {
+  display: flex;
+}
+
+.DropdownMenu1 {
   position: relative;
   &-select {
     border: none;
     background-color: transparent;
     color: #717da3;
-    cursor: pointer;
     & svg {
       width: 1rem;
       display: inline;
@@ -12,16 +15,17 @@
     }
   }
   &-options {
+    box-shadow:  0 0 10px rgba(57, 63, 72, 0.3);
     position: absolute;
     top: 2rem;
     background-color: #fff;
-    width: max-content;
+    width: 9rem;
     border-radius: .4rem;
     padding: .4rem 0;
-// so that the dropdown menus can smoothly falls from top and close back as well
+    // so that the dropdown menus can smoothly falls from top and close back as well
     transform: scale(1,0);
     transform-origin: top;
-    transition: transform 400ms ease-in-out;
+    transition: transform 300ms ease-in-out;
     &-journey{
       padding: .8rem .8rem .8rem 2.5rem;
       position: relative;
@@ -31,6 +35,9 @@
       &:hover {
         background-color: #eee;
         cursor: pointer;
+      }
+      &.selected {
+        font-weight: bold;
       }
     }
     & svg {
@@ -42,9 +49,17 @@
     &.show {
       transform: scale(1,1);
     }
-    &.show .DropdownMenus-options-journey {
+    &.show .DropdownMenu1-options-journey {
       opacity: 1;
-      transition: opacity 250ms ease-in-out 250ms;
+      transition: opacity 150ms ease-in-out 150ms;
     }
   }
+}
+
+#option-arrow {
+  transition: transform 150ms ease-in-out 150ms;
+}
+#option-arrow.show {
+  transform: rotateX(180deg);
+  transition: transform 150ms ease-in-out 150ms;
 }
