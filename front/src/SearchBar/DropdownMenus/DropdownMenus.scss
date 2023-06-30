@@ -1,5 +1,6 @@
 .DropdownMenus {
   display: flex;
+  justify-content: space-between;
 }
 
 .DropdownMenu1 {
@@ -9,7 +10,7 @@
     background-color: transparent;
     color: #717da3;
     & svg {
-      width: 1rem;
+      max-width: 1rem;
       display: inline;
       vertical-align: middle;
     }
@@ -19,7 +20,7 @@
     position: absolute;
     top: 2rem;
     background-color: #fff;
-    width: 9rem;
+    white-space: nowrap;
     border-radius: .4rem;
     padding: .4rem 0;
     // so that the dropdown menus can smoothly falls from top and close back as well
@@ -41,7 +42,7 @@
       }
     }
     & svg {
-      width: 1.2rem;
+      max-width: 1.2rem;
       display: inline;
       position: absolute;
       left: .8rem;

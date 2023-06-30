@@ -12,6 +12,9 @@ function useCounter(initialValue = 0) {
   }
 
   const increment = () => {
+    if (count >= 9) {
+      return;
+    }
     setCount(prevCount => prevCount + 1);
   };
 

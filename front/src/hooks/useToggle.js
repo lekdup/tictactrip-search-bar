@@ -8,13 +8,12 @@ function useToggle(initialValue = false) {
   useEffect(() => {
     const handleOutsideClick = (e) => {
       const clickedEl = e.target;
-      //  return nothin if clicked inside the 2 dropdown menu
+      //  return nothing if clicked inside the 2 dropdown menu
       const dropdown2 = clickedEl.closest('.DropdownMenu2-options');
       if (dropdown2) {
         return;
       }
 
-      
       if (ref.current && !ref.current.contains(clickedEl)) {
         setIsOpen(false);
       }

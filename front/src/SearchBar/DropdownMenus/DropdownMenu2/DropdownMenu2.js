@@ -24,18 +24,24 @@ function DropdownMenu2() {
         ref={buttonRef}
         onClick={toggle}
       >
-        <span 
-          className="DropdownMenu2-select-count">
-            {`
-            ${totalCount} 
-            ${((adultCounter.count === 0 || adultCounter.count === 1) ? "Adult" : "Adults") ||
-            ((youthCounter.count === 0 || youthCounter.count === 1 && seniorCounter.count === 0 || seniorCounter.count === 1) ? "Passenger" : "Passengers") ||
-            ((adultCounter.count > 0 && (youthCounter.count > 0 || seniorCounter.count > 0)) ? "Passengers" : "Adult")}
-          `}
-        </span>, <span className="DropdownMenu2-select-membership">No discount card</span> <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className={`${isOpen ? "show" : ""}`} id="option-arrow"><path d="M12 14.121l6.364-6.364a1 1 0 0 1 1.414 1.415l-7.07 7.07a.997.997 0 0 1-1.415 0l-7.071-7.07a1 1 0 1 1 1.414-1.415L12 14.121z" fill="#717da3"></path></svg>
+        <span className="DropdownMenu2-select-profile">
+          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+            <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" fill="#717da3"/></svg>
+        </span>
+        <span className="DropdownMenu2-select-count">{`${totalCount} `}</span>
+        <span className="DropdownMenu2-select-membership">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" size="24" color="#717da3"><path d="M15.375 15.375c2.025 0 3.825-.9 5.063-2.25H21v6.75C21 20.55 20.55 21 19.875 21H4.125C3.45 21 3 20.55 3 19.875v-6.75h7.313c1.237 1.35 3.037 2.25 5.062 2.25zm-6.75-6.75c0 .787.113 1.575.338 2.25H3v-2.25C3 7.95 3.45 7.5 4.125 7.5h4.613c-.113.338-.113.787-.113 1.125zm6.75 5.625c-3.037 0-5.625-2.475-5.625-5.625S12.225 3 15.375 3 21 5.475 21 8.625s-2.475 5.625-5.625 5.625zm1.913-8.662l-4.726 5.174.788.788 4.725-5.175-.787-.787zm.337 6.3a1.013 1.013 0 1 0 0-2.026 1.013 1.013 0 0 0 0 2.025zm-4.5-4.5a1.013 1.013 0 1 0 0-2.026 1.013 1.013 0 0 0 0 2.026z" fill="currentColor" fillRule="evenodd"></path></svg>
+        </span>
       </button>
       <div className={`DropdownMenu2-options ${isOpen ? "show" : ""}`}>
         {/* all the counters from here */}
+        <div className="DropdownMenu2-options-row">
+          <h3>Passengers</h3>
+          <button className="DropdownMenu2-options-row-closeBtn" onClick={toggle}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <path fill="#717da3" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+          </button>
+        </div>
         <div className="DropdownMenu2-options-row adult">
           <div className="DropdownMenu2-options-row-left">
             <h3>Adult</h3>
