@@ -1,20 +1,18 @@
-body {
-  min-height: 100dvh;
-  max-width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f1f2f6;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 #root {
-  // width: 100vw;
+  width: 100%;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  background-color: #f1f2f6;
 }
 .App {
-  // max-width: 80%;
-  // margin: auto;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // place-items: center;
+  padding: 1rem;
+  width: 100%;
 }
+

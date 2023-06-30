@@ -1,0 +1,78 @@
+.InputForm-container {
+  margin-top: 1rem;
+}
+
+.InputForm {
+  display: grid;
+  row-gap: .6rem;
+  &-field {
+    position: relative;
+    & input {
+      border-radius: .5rem;
+      background-color: #F1F2F6;
+      border: none;
+      padding: .8rem .8rem .8rem 2.5rem;
+      font-size: 1rem;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        color: #A0AAC3;
+      }
+    }
+    &-logo {
+      position: absolute;
+      left: .8rem;
+      top: .9rem;
+      max-width: 1rem;
+      &.second {
+        max-width: 1rem;
+        top: .6rem;
+      }
+    }
+
+    &-searchResult {
+      position: absolute;
+      top: 3.4rem;
+      z-index: 2;
+      border-radius: .5rem;
+      max-height: 20rem;
+      overflow: scroll;
+      box-shadow:  0 0 10px rgba(57, 63, 72, 0.3);
+
+      transform: scale(1,0);
+      transform-origin: top;
+      transition: transform 300ms ease-in-out 300ms;
+      & li {
+        background-color: #fff;
+        color: #132968;
+        padding: 1rem 1rem 1rem 2.5rem;
+        cursor: pointer;
+        &:hover {
+          background-color: #f1f2f6;
+        }
+        & span {
+          position: absolute;
+          max-width: 1rem;
+          left: .8rem;
+          margin-top: -.1rem;
+        }
+      }
+      &.show {
+        transform: scale(1,1);
+      }
+    }
+  }
+  &-Btn {
+    background-color: rgb(250, 107, 107);
+    padding: 1rem;
+    border-radius: .5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    &:hover {
+      background-color: #fb8989;
+    }
+  }
+}

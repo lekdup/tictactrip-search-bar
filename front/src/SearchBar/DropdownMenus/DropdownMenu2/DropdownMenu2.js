@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './DropdownMenu2.scss';
 import useToggle from '../../../hooks/useToggle';
 import useCounter from '../../../hooks/useCounter';
