@@ -3,11 +3,11 @@ import InputForm from './InputForm/InputForm';
 import OptionLogement from './OptionLogement/OptionLogement';
 import './SearchBar.scss';
 
-function SearchBar() {
+function SearchBar({ handleSubmit }) {
   return (
     <div className="container">
       <DropdownMenus />
-      <InputForm />
+      <InputForm handleSubmit={handleSubmit}/>
       <OptionLogement />
     </div>
   )

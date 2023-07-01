@@ -1,5 +1,7 @@
 .DropdownMenu2 {
-  // position: relative;
+  @media (min-width: 768px) {
+    position: relative;
+  }
   .DropdownMenu2-select {
     color: #132968;
     font-weight: bold;
@@ -17,13 +19,15 @@
     z-index: 9;
     inset: 0;
     background-color: #fff;
-    // top: 2rem;
-    // right: 0vw;
-    // left: auto;
-    // box-shadow:  0 0 10px rgba(57, 63, 72, 0.3);
-    // padding: 1.8rem;
-    // border-radius: .7rem;
-    // max-width: 18rem;
+    @media (min-width: 768px) {
+      width: 20rem;
+      height: 14rem;
+      top: 2rem;
+      box-shadow:  0 0 10px rgba(57, 63, 72, 0.3);
+      border-radius: .7rem;
+      padding-top: 1rem;
+      transform-origin: top;
+    }
 
     transform: scale(1,0);
     transform-origin: bottom;
@@ -47,6 +51,12 @@
       justify-content: space-between;
       padding: .8rem;
       border-bottom: 1px solid #DCDFE9;
+      // at desktop version, hide the passenger and close button
+      @media (min-width: 768px) {
+        &:first-child {
+          display: none;
+        }
+      }
       &-closeBtn {
         max-width: 1.5rem;
       }

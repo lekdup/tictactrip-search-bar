@@ -3,13 +3,13 @@ import CityFrom from './CitySearch/CityFrom';
 import CityTo from './CitySearch/CityTo';
 import { useState } from 'react';
 
-function InputForm() {
-  const today = new Date().toDateString();
+function InputForm({ handleSubmit }) {
+  // const today = new Date().toDateString();
   const [cityFrom, setCityFrom] = useState("");
 
   return (
     <section className="InputForm-container">
-      <form className="InputForm">
+      <form className="InputForm" onSubmit={handleSubmit}>
         <CityFrom setCityFrom={setCityFrom}/>
         <CityTo cityFrom={cityFrom}/>
         <div className="InputForm-field dates">
@@ -45,7 +45,7 @@ function InputForm() {
             />
           </div>
         </div>
-        <button type="button" className="InputForm-Btn">Search</button>
+        <button type="submit" className="InputForm-Btn">Search</button>
       </form>
     </section>
   )
