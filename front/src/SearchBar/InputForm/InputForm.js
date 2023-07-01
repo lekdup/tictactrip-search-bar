@@ -1,23 +1,18 @@
 import './InputForm.scss';
-import CityFrom from './CityFrom/CityFrom';
+import CityFrom from './CitySearch/CityFrom';
+import CityTo from './CitySearch/CityTo';
+import { useState } from 'react';
 
 function InputForm() {
   const today = new Date().toDateString();
+  const [cityFrom, setCityFrom] = useState("");
 
   return (
     <section className="InputForm-container">
       <form className="InputForm">
-        <CityFrom />
-        <div className="InputForm-field">
-          <svg className="InputForm-field-logo second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="#A0AAC3"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
-          <input
-            type="text"
-            name="to-city"
-            id="to-city"
-            placeholder="To: City, Station Or Airport"
-          />
-        </div>
-        <div className="InputForm-field">
+        <CityFrom setCityFrom={setCityFrom}/>
+        <CityTo cityFrom={cityFrom}/>
+        <div className="InputForm-field dates">
           {/* <DatePicker
             selected={startDate}
             onChange={(date) => setStartDate(date)}

@@ -1,0 +1,54 @@
+.OptionLogement {
+  display: flex;
+  padding-top: 1rem;
+  gap: .5rem;
+  & p {
+    color: rgb(19, 41, 104);
+    font-size: .9rem;
+    & a {
+      text-decoration: none;
+      font-weight: bold;
+      color: rgb(19, 41, 104);
+    }
+  }
+  &-switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 18px;
+    & input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    &-slider {
+      position: absolute;
+      cursor: pointer;
+      inset: 0;
+      background-color: #DCDFE9;
+      border-radius: 100vmax;
+      transition: .4s;
+    }
+    &-slider::before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 2px;
+      bottom: 2px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: .4s;
+    }
+  }
+}
+input:checked + .OptionLogement-switch-slider {
+  background-color: rgb(94, 144, 204);
+}
+input:focus + .OptionLogement-switch-slider {
+  box-shadow: 0 0 1px #F1F2F6;
+}
+
+input:checked + .OptionLogement-switch-slider::before {
+  transform: translateX(12px);
+}

@@ -1,6 +1,10 @@
 .DropdownMenus {
   display: flex;
   justify-content: space-between;
+  @media (min-width: 768px) {
+    justify-content: start;
+    gap: 1rem;
+  }
 }
 
 .DropdownMenu1 {

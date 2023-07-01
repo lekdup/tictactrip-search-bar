@@ -5,8 +5,16 @@
 .InputForm {
   display: grid;
   row-gap: .6rem;
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
   &-field {
     position: relative;
+    @media (min-width: 768px) {
+      flex-grow: 1;
+    }
     & input {
       border-radius: .5rem;
       background-color: #F1F2F6;
@@ -14,6 +22,7 @@
       padding: .8rem .8rem .8rem 2.5rem;
       font-size: 1rem;
       width: 100%;
+      color: #132968;
       &:focus {
         outline: none;
       }
@@ -29,6 +38,12 @@
       &.second {
         max-width: 1rem;
         top: .6rem;
+      }
+    }
+    &.dates {
+      display: flex;
+      & input {
+        padding: .8rem;
       }
     }
 
@@ -71,6 +86,9 @@
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
+    @media (min-width: 768px) {
+      flex-grow: 1;
+    }
     &:hover {
       background-color: #fb8989;
     }
